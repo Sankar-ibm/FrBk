@@ -8,4 +8,4 @@ script:
   - ./mvnw clean install
   - mkdir -p dev/backend
   - pwd
-  - cp target/new-futuretrader-backend-app.jar ../dev/backend
+  - cp target/new-futuretrader-backend-app.jar dev/backend
