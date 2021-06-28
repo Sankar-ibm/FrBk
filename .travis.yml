@@ -1,39 +1,7 @@
-sudo: required
 language: java
-
-# use ftng_next branch
-#branches:
-#  only:
-#  - ftng_next
-
-before_install:
-  - cd NewFutureTraderBackend
-  - pwd
-  - chmod +x mvnw
-  - cd ~
-  - mkdir -p dev/backend
-  - pwd
-  - cd dev/backend
-  - cp NewFutureTraderBackend/target/new-futuretrader-backend-app.jar .
-
-install:
-  #- curl -sL https://ibm.biz/idt-installer | bash
-  #- ibmcloud login -a https://api.ng.bluemix.net --apikey $CLOUD_API_KEY -r us-south
-  #- ibmcloud cos config crn --crn "$CLOUD_COS_CRN"
-  #- mkdir -p dev/backend
-  #- cp target/new-futuretrader-backend-app.jar dev/backend
-
-# install docker
-services:
-  - docker
-
-script: "echo 'Building Docker image with tags'"
-
-after_success:
-  - export DEPLOY_TIMESTAMP=`date +'%Y%m%d-%H%M%S'`
-  # Creating a custom tag for the docker image in addition to the default "latest" tag.
-  #- docker build -t ft-backend:$DEPLOY_TIMESTAMP-$TRAVIS_BUILD_NUMBER-$TRAVIS_BRANCH -t ft-backend:latest .
-  # script: pass namespace
-  #- ./build_and_push_image.sh ft-backend
-
-  
+sudo: required
+dist: trusty
+jdk: 
+  - openjdk8
+before_script: cd NewFutureTraderBackend
+script: ./mvnw clean install
