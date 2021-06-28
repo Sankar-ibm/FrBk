@@ -9,9 +9,11 @@ language: java
 before_install:
   - cd NewFutureTraderBackend
   - pwd
-  - chmod +x mvnw
-  - cd ..
-  - cp target/new-futuretrader-backend-app.jar dev/backend
+  - chmod +x mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+  - cd ~
+  - mkdir -p dev/backend
+  - cd ~/dev/backend
+  - cp NewFutureTraderBackend/target/new-futuretrader-backend-app.jar .
 
 install:
   #- curl -sL https://ibm.biz/idt-installer | bash
