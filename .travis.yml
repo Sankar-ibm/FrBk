@@ -1,8 +1,10 @@
 language: java
 jdk: 
   - openjdk8
-before_script: 
+
+script:
   - cd NewFutureTraderBackend
-script: 
   - chmod +x mvnw
   - ./mvnw clean install
+  - mkdir -p dev/backend
+  - cp target/new-futuretrader-backend-app.jar ../dev/backend
