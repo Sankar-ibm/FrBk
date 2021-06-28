@@ -21,4 +21,8 @@ after_success:
   - cd ../web-frontend
   - docker build -t web-frontend:$DEPLOY_TIMESTAMP-$TRAVIS_BUILD_NUMBER-$TRAVIS_BRANCH -t web-frontend:latest .
   # script: pass frontend-namespace
+<<<<<<< HEAD
   - ./build-frontendimage.sh web-frontend-dev
+=======
+  - ./build-frontendimage.sh web-frontend-dev
+>>>>>>> 590bee94f440f5142e13bedb50de4be14764c45e
