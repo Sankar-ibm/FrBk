@@ -1,6 +1,6 @@
 #!/bin/bash
 # test
-cr_namespace=$1
+cr_namespace=ft-backend-dev
 echo "Container Registry Namespace: $cr_namespace"
 
 ############################################################################
