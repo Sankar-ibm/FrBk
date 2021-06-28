@@ -1,7 +1,5 @@
 language: java
-sudo: required
-dist: trusty
 jdk: 
   - openjdk8
 before_script: cd NewFutureTraderBackend
-script: ./mvnw clean install
+script: chmod +x mvnw
