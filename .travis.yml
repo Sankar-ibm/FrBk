@@ -1,9 +1,9 @@
 language: java
 
 # use ftng_next branch
-branches:
-  only:
-  - ftng_next
+#branches:
+#  only:
+#  - ftng_next
 
 before_install:
   - chmod +x mvnw
