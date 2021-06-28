@@ -16,12 +16,12 @@ after_success:
   - export DEPLOY_TIMESTAMP=`date +'%Y%m%d-%H%M%S'`
   # Creating a custom tag for the docker image in addition to the default "latest" tag.
   - - cd ../NewFutureTraderBackend
-  - docker build -t ft-backend:$DEPLOY_TIMESTAMP-$TRAVIS_BUILD_NUMBER-$TRAVIS_BRANCH -t ft-backend:latest .
+  - docker build -t ft-backend-dev:$DEPLOY_TIMESTAMP-$TRAVIS_BUILD_NUMBER-$TRAVIS_BRANCH -t ft-backend-dev:latest .
     # script: pass backend-namespace
   - ./build-backend-image.sh ft-backend-dev
   #- ./build-backend-image.sh ft-backend-dev
   - cd ../web-frontend
-  - docker build -t web-frontend:$DEPLOY_TIMESTAMP-$TRAVIS_BUILD_NUMBER-$TRAVIS_BRANCH -t web-frontend:latest .
+  - docker build -t web-frontend-dev:$DEPLOY_TIMESTAMP-$TRAVIS_BUILD_NUMBER-$TRAVIS_BRANCH -t web-frontend-dev:latest .
   # script: pass frontend-namespace
   - ./build-frontend-image.sh web-frontend-dev
   #- ./build-frontend-image.sh web-frontend-dev
