@@ -1,3 +1,4 @@
+sudo: required
 language: java
 
 # use ftng_next branch
@@ -7,7 +8,7 @@ language: java
 
 before_install:
   - cd NewFutureTraderBackend
-  - chmod +x ./mvnw clean install
+  - ./mvnw clean install
   - cd ..
   - cp target/new-futuretrader-backend-app.jar dev/backend
 
