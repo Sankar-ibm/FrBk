@@ -7,15 +7,16 @@ language: java
 
 before_install:
   - cd NewFutureTraderBackend
-  - chmod +x mvnw
+  - chmod +x mvnw clean install
   - cd ..
+  - cp target/new-futuretrader-backend-app.jar dev/backend
 
 install:
-  - curl -sL https://ibm.biz/idt-installer | bash
-  - ibmcloud login -a https://api.ng.bluemix.net --apikey $CLOUD_API_KEY -r us-south
-  - ibmcloud cos config crn --crn "$CLOUD_COS_CRN"
-  - mkdir -p dev/backend
-  - cp target/new-futuretrader-backend-app.jar dev/backend
+  #- curl -sL https://ibm.biz/idt-installer | bash
+  #- ibmcloud login -a https://api.ng.bluemix.net --apikey $CLOUD_API_KEY -r us-south
+  #- ibmcloud cos config crn --crn "$CLOUD_COS_CRN"
+  #- mkdir -p dev/backend
+  #- cp target/new-futuretrader-backend-app.jar dev/backend
 
 # install docker
 services:
