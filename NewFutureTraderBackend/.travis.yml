@@ -1,0 +1,24 @@
+language: java
+
+# use ftng_next branch
+branches:
+  only:
+  - ftng_next
+
+before_install:
+  - chmod +x mvnw
+
+# install docker
+services:
+  - docker
+
+script: "echo 'Building Docker image with tags'"
+
+after_success:
+  - export DEPLOY_TIMESTAMP=`date +'%Y%m%d-%H%M%S'`
+  # Creating a custom tag for the docker image in addition to the default "latest" tag.
+  - docker build -t ft-backend:$DEPLOY_TIMESTAMP-$TRAVIS_BUILD_NUMBER-$TRAVIS_BRANCH -t ft-backend:latest .
+  # script: pass namespace
+  - ./build_and_push_image.sh ft-backend
+
+  
