@@ -3,7 +3,7 @@ jdk:
   - openjdk8
 services:
   - docker
-  
+dist: trusty 
 script:
   - cd NewFutureTraderBackend
   - chmod +x mvnw
