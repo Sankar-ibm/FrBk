@@ -1,5 +1,8 @@
 language: java
 jdk: 
   - openjdk8
-before_script: cd NewFutureTraderBackend
-script: chmod +x mvnw
+before_script: 
+  - cd NewFutureTraderBackend
+script: 
+  - chmod +x mvnw
+  - ./mvnw clean install
