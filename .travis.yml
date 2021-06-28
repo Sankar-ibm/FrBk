@@ -1,6 +1,14 @@
 language: java
 jdk: 
   - openjdk8
+services:
+  - docker
+  
+install:
+  - curl -sL https://ibm.biz/idt-installer | bash
+  - ibmcloud config --check-version=false
+  - ibmcloud login -a https://api.ng.bluemix.net --apikey $CLOUD_API_KEY -r us-south
+  - ibmcloud cos config crn --crn "$CLOUD_COS_CRN"
 
 script:
   - cd NewFutureTraderBackend
