@@ -1,6 +1,11 @@
-sudo: required
 language: java
-
+sudo: true
+dist: trusty
+jdk: oraclejdk9
+addons:
+  apt:
+    packages:
+      - oracle-java9-installer
 # use ftng_next branch
 #branches:
 #  only:
@@ -8,10 +13,7 @@ language: java
 
 before_install:
   - cd NewFutureTraderBackend
-  - pwd
-  - chmod -R 777 *.*
-  - ./mvnw clean install
-  - cd ~
+  - chmod +x mvnw
   - mkdir -p dev/backend
   - cd ~/dev/backend
   - cp NewFutureTraderBackend/target/new-futuretrader-backend-app.jar .
