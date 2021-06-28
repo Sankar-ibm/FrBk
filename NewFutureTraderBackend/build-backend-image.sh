@@ -55,7 +55,8 @@ lookup_image=$( ibmcloud cr images | grep "us.icr.io/$cr_namespace/ft-backend-de
 # Push the image                                                           #
 ############################################################################
 echo "Pushing image to registry"
-echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+#echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+docker login -u iamapikey -p $CLOUD_API_KEY us.icr.io
 docker push us.icr.io/$cr_namespace/ft-backend-dev:$DEPLOY_TIMESTAMP-$TRAVIS_BUILD_NUMBER-$TRAVIS_BRANCH
 docker push us.icr.io/$cr_namespace/ft-backend-dev:latest
 ############################################################################
