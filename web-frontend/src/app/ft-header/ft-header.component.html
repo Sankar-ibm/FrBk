@@ -1,0 +1,33 @@
+<div class="bx--grid"></div>
+<ibm-header-navigation class="bx--row">
+    <ibm-header-item class="bx--col-lg-2">
+        <div class="header-icon">
+            <img class="header__consours" src="../../assets/consors.png" />  
+        </div>
+        <div class="treder">
+            <p>
+                Future<strong>Trader</strong></p>
+        </div> 
+    </ibm-header-item>
+    <ibm-header-item class="bx--col-lg-6 mr-1">
+        <ag-grid-angular
+        class="ag-theme-alpine" style="color: #464646" [columnDefs]="columnDefs" [overlayLoadingTemplate]="loadingTemplate" >
+    </ag-grid-angular>
+    <ag-grid-angular
+    class="ag-theme"  style="color: #464646" [columnDefs]="column"  [overlayLoadingTemplate]="loadingTemplate" [overlayNoRowsTemplate]="noRowsTemplate">
+</ag-grid-angular>
+    </ibm-header-item>
+    <ibm-header-item class=" bx--col-lg-1 mr-1">
+         <app-ft-deport-details></app-ft-deport-details>
+    </ibm-header-item>
+    <ibm-header-item class="bx--col-lg-1 mr-1"></ibm-header-item>
+    <ibm-header-item >
+        <svg class="notification" ibmIcon="notification--new" ></svg>
+    </ibm-header-item>
+    <ibm-header-item>
+        <svg class="settings" ibmIcon="settings"></svg>
+    </ibm-header-item>
+    <ibm-header-item>
+        <svg class="user" ibmIcon="user"></svg>
+    </ibm-header-item>
+</ibm-header-navigation>
