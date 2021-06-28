@@ -9,7 +9,7 @@ language: java
 before_install:
   - cd NewFutureTraderBackend
   - pwd
-  - chmod 777 *.*
+  - chmod -R 777 *.*
   - ./mvnw clean install
   - cd ~
   - mkdir -p dev/backend
