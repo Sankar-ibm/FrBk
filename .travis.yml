@@ -12,8 +12,7 @@ before_install:
 
 install:
   - curl -sL https://ibm.biz/idt-installer | bash
-  - ibmcloud api $CLOUD_API_ENDPOINT
-  - ibmcloud login --apikey $CLOUD_COS_API_KEY -r us-south
+  - ibmcloud login -a https://api.ng.bluemix.net --apikey $CLOUD_API_KEY -r us-south
   - ibmcloud cos config crn --crn "$CLOUD_COS_CRN"
   - mkdir -p dev/backend
   - cp target/new-futuretrader-backend-app.jar dev/backend
