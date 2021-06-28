@@ -7,7 +7,7 @@ language: java
 
 before_install:
   - cd NewFutureTraderBackend
-  - ./mvnw clean install
+  - chmod +x ./mvnw clean install
   - cd ..
   - cp target/new-futuretrader-backend-app.jar dev/backend
 
