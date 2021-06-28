@@ -8,7 +8,8 @@ language: java
 
 before_install:
   - cd NewFutureTraderBackend
-  - chmod +x mvn
+  - pwd
+  - chmod +x mvnw
   - cd ..
   - cp target/new-futuretrader-backend-app.jar dev/backend
 
