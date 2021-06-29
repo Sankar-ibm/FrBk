@@ -18,11 +18,13 @@ after_success:
   - - cd ../NewFutureTraderBackend
   - docker build -t ft-backend-dev:$DEPLOY_TIMESTAMP-$TRAVIS_BUILD_NUMBER-$TRAVIS_BRANCH -t ft-backend-dev:latest .
     # script: pass backend-namespace
+  - cd ..
   - ./build-backend-image.sh ft-backend-dev
   #- ./build-backend-image.sh ft-backend-dev
   - cd ../web-frontend
   - docker build -t web-frontend-dev:$DEPLOY_TIMESTAMP-$TRAVIS_BUILD_NUMBER-$TRAVIS_BRANCH -t web-frontend-dev:latest .
   # script: pass frontend-namespace
+  - cd ..
   - ./build-frontend-image.sh web-frontend-dev
   #- ./build-frontend-image.sh web-frontend-dev
 
