@@ -21,7 +21,7 @@ after_success:
   - cd ..
   - ./build-backend-image.sh ft-backend-dev
   #- ./build-backend-image.sh ft-backend-dev
-  - cd ../web-frontend
+  - cd web-frontend
   - docker build -t web-frontend-dev:$DEPLOY_TIMESTAMP-$TRAVIS_BUILD_NUMBER-$TRAVIS_BRANCH -t web-frontend-dev:latest .
   # script: pass frontend-namespace
   - cd ..
